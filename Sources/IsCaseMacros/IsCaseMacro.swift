@@ -26,7 +26,7 @@ public struct IsCaseMacro: MemberMacro {
         in context: some MacroExpansionContext
     ) throws -> [DeclSyntax] {
         let caseNames = try getCaseNames(declaration)
-        let companionEnum = try EnumDeclSyntax(.init(stringLiteral: "enum Companion")) {
+        let companionEnum = try EnumDeclSyntax(.init(stringLiteral: "public enum Companion")) {
             try MemberBlockItemListSyntax {
                 for caseName in caseNames {
                     try EnumCaseDeclSyntax(.init(stringLiteral: "case \(caseName)"))
@@ -47,7 +47,7 @@ public struct IsCaseMacro: MemberMacro {
                         /// let firstValue = Test.test1("first")
                         /// firstValue.is(.test1) // returns true
                         /// ```
-                        func `is`(_ otherCase: Companion) -> Bool
+                        public func `is`(_ otherCase: Companion) -> Bool
                         """
         )) {
             try SwitchExprSyntax("switch (self, otherCase)") {

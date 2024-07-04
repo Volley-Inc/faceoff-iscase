@@ -42,7 +42,7 @@ final class IsCaseTests: XCTestCase {
                 case test1(String)
                 case test2(Int)
             
-                enum Companion {
+                public enum Companion {
                     case test1
                     case test2
                 }
@@ -58,7 +58,7 @@ final class IsCaseTests: XCTestCase {
                 /// let firstValue = Test.test1("first")
                 /// firstValue.is(.test1) // returns true
                 /// ```
-                func `is`(_ otherCase: Companion) -> Bool {
+                public func `is`(_ otherCase: Companion) -> Bool {
                     switch (self, otherCase) {
                     case (.test1, .test1):
                         return true
@@ -97,7 +97,7 @@ final class IsCaseTests: XCTestCase {
                     print("hello")
                 }
 
-                enum Companion {
+                public enum Companion {
                     case test1
                     case test2
                 }
@@ -113,7 +113,7 @@ final class IsCaseTests: XCTestCase {
                 /// let firstValue = Test.test1("first")
                 /// firstValue.is(.test1) // returns true
                 /// ```
-                func `is`(_ otherCase: Companion) -> Bool {
+                public func `is`(_ otherCase: Companion) -> Bool {
                     switch (self, otherCase) {
                     case (.test1, .test1):
                         return true
@@ -160,7 +160,7 @@ final class IsCaseTests: XCTestCase {
                     print("hello")
                 }
 
-                enum Companion {
+                public enum Companion {
                     case test1
                     case test2
                 }
@@ -176,7 +176,7 @@ final class IsCaseTests: XCTestCase {
                 /// let firstValue = Test.test1("first")
                 /// firstValue.is(.test1) // returns true
                 /// ```
-                func `is`(_ otherCase: Companion) -> Bool {
+                public func `is`(_ otherCase: Companion) -> Bool {
                     switch (self, otherCase) {
                     case (.test1, .test1):
                         return true
